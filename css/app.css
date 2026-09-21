@@ -10,14 +10,6 @@ body {
     color: #333;
 }
 
-/* status bar (for the javascript later) */
-#status-bar {
-    background-color: orange;
-    color: black;
-    text-align: center;
-    padding: 10px;
-}
-
 /* header */
 .header {
     background-color: #333;
@@ -138,6 +130,91 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* diagnostics panel */
+.diagnostics {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-left: 8px solid gray;
+    padding: 15px;
+}
+
+.diagnostics h2 {
+    margin-top: 0;
+}
+
+.diagnostics ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* news feed grid */
+.feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px 0;
+}
+
+.card p {
+    margin: 0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+/* network states
+   js/app.js puts one of these classes on the <body>,
+   so the rules below change when the connection changes */
+
+/* fast: full size images, green panel */
+.network-fast .diagnostics {
+    border-left-color: green;
+}
+
+.network-fast .card-image img {
+    height: 180px;
+}
+
+/* medium: smaller images, orange panel */
+.network-medium .diagnostics {
+    border-left-color: orange;
+}
+
+.network-medium .card-image img {
+    height: 80px;
+}
+
+/* slow: no images, just a gray box, red panel */
+.network-slow .diagnostics {
+    border-left-color: red;
+}
+
+.network-slow .card-image {
+    background-color: #ccc;
+    padding: 15px;
+    text-align: center;
+}
+
+.network-slow .card-image img {
+    display: none;
+}
+
+.network-slow .card-image::after {
+    content: "Image hidden to save data";
 }
 
 /* footer */
