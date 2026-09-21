@@ -1,5 +1,171 @@
-body{
-    padding: 0;
-    margin: 0;
+* {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* status bar (for the javascript later) */
+#status-bar {
+    background-color: orange;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+/* header */
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.nav a {
+    color: white;
+}
+
+/* main part */
+.container {
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+video {
+    width: 100%;
+    background-color: black;
+}
+
+img {
+    max-width: 100%;
+}
+
+.rating {
+    font-weight: bold;
+    color: darkred;
+}
+
+/* featured */
+.featured {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.featured h2 {
+    margin-top: 0;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* reviews */
+.review {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.review img {
+    float: left;
+    width: 260px;
+    height: 180px;
+    margin-right: 15px;
+}
+
+.review h3 {
+    margin-top: 0;
+}
+
+/* videos */
+.videos {
+    overflow: hidden;
+}
+
+.video-box {
+    float: left;
+    width: 31%;
+    margin-right: 2%;
+}
+
+/* newsletter */
+input {
+    padding: 8px;
+    width: 250px;
+    max-width: 100%;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* phone */
+@media (max-width: 600px) {
+    .video-box {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .review img {
+        float: none;
+        width: 100%;
+        height: 180px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }

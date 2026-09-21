@@ -3,10 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Media Dashboard</title>
+    <title>The Back Row - Movie Reviews</title>
     <link rel="stylesheet" href="css/app.css">
+    <!-- all the movies here are made up. images are placeholders for now -->
 </head>
 <body>
-    
+
+    <div id="status-bar" hidden></div>
+
+    <!-- header -->
+    <div class="header">
+        <h1>Movie Review Website</h1>
+        <p>Movie and TV reviews</p>
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#top5">Top 5</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+
+        <!-- featured review -->
+        <div class="featured">
+            <h2>Featured Review: The Salt Road</h2>
+            <video controls preload="none" poster="images/placeholder.svg" data-autoplay>
+                <source src="videos/salt-road-trailer.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+            <p>Two sisters drive an old truck across a dry lake to bury their father. Not much happens but it is really good and I did not get bored.</p>
+            <p class="rating">Rating: 4/5</p>
+            <p>Written by Samad</p>
+            <a class="button" href="#">Read full review</a>
+        </div>
+
+        <!-- latest reviews -->
+        <h2 id="reviews">Latest Reviews</h2>
+
+        <div class="review">
+            <img src="images/placeholder.svg" data-small="images/night-ferry-small.jpg" data-large="images/night-ferry-large.jpg" alt="Night Ferry poster">
+            <h3>Night Ferry</h3>
+            <p>A tense first hour on a boat, but the second hour is slow.</p>
+            <p class="rating">Rating: 3/5</p>
+        </div>
+
+        <div class="review">
+            <img src="images/placeholder.svg" data-small="images/harbor-lights-small.jpg" data-large="images/harbor-lights-large.jpg" alt="Harbor Lights poster">
+            <h3>Harbor Lights (Season 2)</h3>
+            <p>Better than season 1. The story finally makes sense.</p>
+            <p class="rating">Rating: 4/5</p>
+        </div>
+
+        <div class="review">
+            <img src="images/placeholder.svg" data-small="images/ten-minutes-of-rain-small.jpg" data-large="images/ten-minutes-of-rain-large.jpg" alt="Ten Minutes of Rain poster">
+            <h3>Ten Minutes of Rain</h3>
+            <p>Looks nice but I did not care about the characters.</p>
+            <p class="rating">Rating: 2/5</p>
+        </div>
+
+        <div class="review">
+            <img src="images/placeholder.svg" data-small="images/the-understudies-small.jpg" data-large="images/the-understudies-large.jpg" alt="The Understudies poster">
+            <h3>The Understudies</h3>
+            <p>A TV show about a theater group that is falling apart. Only six episodes and all of them are good.</p>
+            <p class="rating">Rating: 5/5</p>
+        </div>
+
+        <!-- videos -->
+        <h2 id="videos">Videos</h2>
+
+        <div class="videos">
+            <div class="video-box">
+                <video controls preload="none" poster="images/placeholder.svg" data-autoplay>
+                    <source src="videos/night-ferry-clip.mp4" type="video/mp4">
+                </video>
+                <p>Night Ferry clip</p>
+            </div>
+
+            <div class="video-box">
+                <video controls preload="none" poster="images/placeholder.svg" data-autoplay>
+                    <source src="videos/harbor-lights-clip.mp4" type="video/mp4">
+                </video>
+                <p>Harbor Lights first look</p>
+            </div>
+
+            <div class="video-box">
+                <video controls preload="none" poster="images/placeholder.svg" data-autoplay>
+                    <source src="videos/ten-minutes-of-rain-clip.mp4" type="video/mp4">
+                </video>
+                <p>Ten Minutes of Rain opening</p>
+            </div>
+        </div>
+
+        <!-- top 5 -->
+        <h2 id="top5">Top 5 So Far This Year</h2>
+        <ol>
+            <li>The Salt Road</li>
+            <li>The Understudies</li>
+            <li>Harbor Lights (Season 2)</li>
+            <li>A Quiet Kind of Fire</li>
+            <li>Night Ferry</li>
+        </ol>
+
+        <!-- newsletter -->
+        <h2 id="newsletter">Newsletter</h2>
+        <p>Get one email every Friday with what to watch.</p>
+        <form action="#" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+
+    </div>
+
+    <!-- JS -->
+     <script src="js/app.js"></script>
 </body>
+
 </html>
