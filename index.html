@@ -9,8 +9,6 @@
 </head>
 <body>
 
-    <div id="status-bar" hidden></div>
-
     <!-- header -->
     <div class="header">
         <h1>Movie Review Website</h1>
@@ -26,10 +24,74 @@
 
     <div class="container">
 
+        <!-- network diagnostics panel (js/app.js fills in the numbers) -->
+        <div class="diagnostics">
+            <h2>Network Diagnostics</h2>
+            <p>Current mode: <strong id="network-state">checking...</strong></p>
+            <ul>
+                <li>Connection type: <span id="connection-type">-</span></li>
+                <li>Download speed: <span id="connection-speed">-</span></li>
+                <li>Data saver: <span id="connection-saver">-</span></li>
+            </ul>
+        </div>
+
+        <!-- news feed -->
+        <h2 id="feed">News Feed</h2>
+
+        <div class="feed">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/placeholder.svg" alt="Festival opening night">
+                </div>
+                <h3>Festival announces its opening film</h3>
+                <p>The Northern Lights Film Festival will open with a quiet drama about a lighthouse keeper. Tickets go on sale next week.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/placeholder.svg" alt="TV screen in a dark room">
+                </div>
+                <h3>Why TV seasons are getting shorter</h3>
+                <p>More shows are ordering six or eight episodes instead of ten. We looked at why.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/placeholder.svg" alt="Small cinema entrance">
+                </div>
+                <h3>Small cinemas are busy again</h3>
+                <p>Independent theaters say this was their best summer in years.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/placeholder.svg" alt="Desert road">
+                </div>
+                <h3>Filming The Salt Road in the desert</h3>
+                <p>The director says the heat nearly ruined three cameras. Here is how the crew got through it.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/placeholder.svg" alt="Calendar">
+                </div>
+                <h3>What is coming out this fall</h3>
+                <p>A list of the new movies and shows coming out in October and November.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/placeholder.svg" alt="Award trophy">
+                </div>
+                <h3>Ten Minutes of Rain wins an award</h3>
+                <p>The film won best photography at a small festival in Europe.</p>
+            </div>
+        </div>
+
         <!-- featured review -->
         <div class="featured">
             <h2>Featured Review: The Salt Road</h2>
-            <video controls preload="none" poster="images/placeholder.svg" data-autoplay>
+            <video controls preload="none" poster="images/placeholder.svg">
                 <source src="videos/salt-road-trailer.mp4" type="video/mp4">
                 Your browser does not support video.
             </video>
@@ -43,28 +105,28 @@
         <h2 id="reviews">Latest Reviews</h2>
 
         <div class="review">
-            <img src="images/placeholder.svg" data-small="images/night-ferry-small.jpg" data-large="images/night-ferry-large.jpg" alt="Night Ferry poster">
+            <img src="images/placeholder.svg" alt="Night Ferry poster">
             <h3>Night Ferry</h3>
             <p>A tense first hour on a boat, but the second hour is slow.</p>
             <p class="rating">Rating: 3/5</p>
         </div>
 
         <div class="review">
-            <img src="images/placeholder.svg" data-small="images/harbor-lights-small.jpg" data-large="images/harbor-lights-large.jpg" alt="Harbor Lights poster">
+            <img src="images/placeholder.svg" alt="Harbor Lights poster">
             <h3>Harbor Lights (Season 2)</h3>
             <p>Better than season 1. The story finally makes sense.</p>
             <p class="rating">Rating: 4/5</p>
         </div>
 
         <div class="review">
-            <img src="images/placeholder.svg" data-small="images/ten-minutes-of-rain-small.jpg" data-large="images/ten-minutes-of-rain-large.jpg" alt="Ten Minutes of Rain poster">
+            <img src="images/placeholder.svg" alt="Ten Minutes of Rain poster">
             <h3>Ten Minutes of Rain</h3>
             <p>Looks nice but I did not care about the characters.</p>
             <p class="rating">Rating: 2/5</p>
         </div>
 
         <div class="review">
-            <img src="images/placeholder.svg" data-small="images/the-understudies-small.jpg" data-large="images/the-understudies-large.jpg" alt="The Understudies poster">
+            <img src="images/placeholder.svg" alt="The Understudies poster">
             <h3>The Understudies</h3>
             <p>A TV show about a theater group that is falling apart. Only six episodes and all of them are good.</p>
             <p class="rating">Rating: 5/5</p>
@@ -75,21 +137,21 @@
 
         <div class="videos">
             <div class="video-box">
-                <video controls preload="none" poster="images/placeholder.svg" data-autoplay>
+                <video controls preload="none" poster="images/placeholder.svg">
                     <source src="videos/night-ferry-clip.mp4" type="video/mp4">
                 </video>
                 <p>Night Ferry clip</p>
             </div>
 
             <div class="video-box">
-                <video controls preload="none" poster="images/placeholder.svg" data-autoplay>
+                <video controls preload="none" poster="images/placeholder.svg">
                     <source src="videos/harbor-lights-clip.mp4" type="video/mp4">
                 </video>
                 <p>Harbor Lights first look</p>
             </div>
 
             <div class="video-box">
-                <video controls preload="none" poster="images/placeholder.svg" data-autoplay>
+                <video controls preload="none" poster="images/placeholder.svg">
                     <source src="videos/ten-minutes-of-rain-clip.mp4" type="video/mp4">
                 </video>
                 <p>Ten Minutes of Rain opening</p>

@@ -1,171 +1,248 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-}
-
-/* status bar (for the javascript later) */
-#status-bar {
-    background-color: orange;
-    color: black;
-    text-align: center;
-    padding: 10px;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
 }
 
 /* header */
 .header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 .header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 .nav {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0 0 0;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
 }
 
 .nav li {
-    display: inline-block;
-    margin: 0 10px;
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .nav a {
-    color: white;
+  color: white;
 }
 
 /* main part */
 .container {
-    width: 900px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
 }
 
 h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-    margin-top: 30px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-top: 30px;
 }
 
 video {
-    width: 100%;
-    background-color: black;
+  width: 100%;
+  background-color: black;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .rating {
-    font-weight: bold;
-    color: darkred;
+  font-weight: bold;
+  color: darkred;
 }
 
 /* featured */
 .featured {
-    background-color: #eee;
-    border: 1px solid #ccc;
-    padding: 15px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 15px;
 }
 
 .featured h2 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .button {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 /* reviews */
 .review {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 15px;
-    overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
 }
 
 .review img {
-    float: left;
-    width: 260px;
-    height: 180px;
-    margin-right: 15px;
+  float: left;
+  width: 260px;
+  height: 180px;
+  margin-right: 15px;
 }
 
 .review h3 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 /* videos */
 .videos {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .video-box {
-    float: left;
-    width: 31%;
-    margin-right: 2%;
+  float: left;
+  width: 31%;
+  margin-right: 2%;
 }
 
 /* newsletter */
 input {
-    padding: 8px;
-    width: 250px;
-    max-width: 100%;
+  padding: 8px;
+  width: 250px;
+  max-width: 100%;
 }
 
 button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* diagnostics panel */
+.diagnostics {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-left: 8px solid gray;
+  padding: 15px;
+}
+
+.diagnostics h2 {
+  margin-top: 0;
+}
+
+.diagnostics ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* news feed grid */
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.card h3 {
+  margin: 10px 0 5px 0;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card-image img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* network states
+   js/app.js puts one of these classes on the <body>,
+   so the rules below change when the connection changes */
+
+/* fast: full size images, green panel */
+.network-fast .diagnostics {
+  border-left-color: green;
+}
+
+.network-fast .card-image img {
+  height: 180px;
+}
+
+/* medium: smaller images, orange panel */
+.network-medium .diagnostics {
+  border-left-color: orange;
+}
+
+.network-medium .card-image img {
+  height: 80px;
+}
+
+/* slow: no images, just a gray box, red panel */
+.network-slow .diagnostics {
+  border-left-color: red;
+}
+
+.network-slow .card-image {
+  background-color: #ccc;
+  padding: 15px;
+  text-align: center;
+}
+
+.network-slow .card-image img {
+  display: none;
+}
+
+.network-slow .card-image::after {
+  content: "Image hidden to save data";
 }
 
 /* footer */
 .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
 }
 
 .footer p {
-    margin: 0;
+  margin: 0;
 }
 
 /* phone */
 @media (max-width: 600px) {
-    .video-box {
-        float: none;
-        width: 100%;
-        margin-right: 0;
-    }
+  .video-box {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
 
-    .review img {
-        float: none;
-        width: 100%;
-        height: 180px;
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+  .review img {
+    float: none;
+    width: 100%;
+    height: 180px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 }
