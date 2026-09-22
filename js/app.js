@@ -1,16 +1,18 @@
 // STEP 1: First we get connection object from the browser.
+
 // We checked and figured not every browser supports navigator.connection.
 var connection = navigator.connection;
 
 // STEP 2: This function looks at the connection and decides fast, medium or slow.
 function getNetworkState() {
-  // If the browser does not support the connection object we cannot know,
+  // Since some browsers does not support the connection object we cannot know,
+
   // so we just say "fast" and show the normal page.
   if (!connection) {
     return "fast";
   }
 
-  // Read the 3 things we need from the connection object
+  // So this block of code will read the 3 items we need from the connection object
   var type = connection.effectiveType; // "4g", "3g", "2g" or "slow-2g"
   var speed = connection.downlink; // download speed
   var saving = connection.saveData; // true or false if the user turn on data saver?
@@ -30,11 +32,12 @@ function getNetworkState() {
 }
 
 // STEP 3: This function will put the numbers in the Network Diagnostics panel.
+
 // The ids (#connection-type, #connection-speed and #connection-saver) are in the index.html file.
 function updateDiagnostics(state) {
   document.getElementById("network-state").textContent = state;
 
-  // no connection object means there is nothing to show on the website
+  // no connection means there is nothing to show on the website
   if (!connection) {
     document.getElementById("connection-type").textContent = "not supported";
     document.getElementById("connection-speed").textContent = "-";
@@ -51,7 +54,7 @@ function updateDiagnostics(state) {
     : "Off";
 }
 
-// STEP 4: a function that changes the class on the <body>.
+// STEP 4: This function changes the class on the <body>.
 function updateNetworkClass() {
   var state = getNetworkState();
 
@@ -65,7 +68,7 @@ function updateNetworkClass() {
   // add the new one, for example "network-" + "slow" makes "network-slow"
   document.body.classList.add("network-" + state);
 
-  // This as well will update the diagonostic panel
+  // This as well will update the diagnostic panel
   updateDiagnostics(state);
 
   // This will display in the console so we can see it working 
